@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffffff; /* Background body tetap putih */
+    font-family: 'Poppins', sans-serif;
+}
+
+.calculator {
+    background: #f0f0f5; /* Warna latar belakang kalkulator dibuat abu terang untuk kontras */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lebih gelap agar kalkulator terlihat jelas */
+    max-width: 320px;
+    width: 100%;
+}
+
+.display {
+    font-size: 2.5em;
+    background: #222;
+    color: #fff;
+    text-align: right;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px;
+    background: #f0f0f0;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:hover {
+    background: #ddd;
+}
+
+button.equal {
+    background: #007bff;
+    color: #fff;
+}
+
+button.equal:hover {
+    background: #0069d9;
+}
+
+button.equal:active {
+    background: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Animasi untuk display */
+.display.flash {
+    animation: flash 0.5s ease-in-out;
+}
+
+@keyframes flash {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Animasi ketika tombol ditekan */
+button:active {
+    transform: scale(0.9);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Desain responsif */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 15px;
+    }
+
+    .display {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+}

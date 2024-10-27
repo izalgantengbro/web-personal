@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Kalkulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendNumber('/')">:</button>
+        <button onclick="appendNumber('*')">x</button>
+        <button onclick="deleteLast()">DEL</button>
+        
+        <button onclick="appendNumber('7')">7</button>
+        <button onclick="appendNumber('8')">8</button>
+        <button onclick="appendNumber('9')">9</button>
+        <button onclick="appendNumber('-')">-</button>
+
+        <button onclick="appendNumber('4')">4</button>
+        <button onclick="appendNumber('5')">5</button>
+        <button onclick="appendNumber('6')">6</button>
+        <button onclick="appendNumber('+')">+</button>
+
+        <button onclick="appendNumber('1')">1</button>
+        <button onclick="appendNumber('2')">2</button>
+        <button onclick="appendNumber('3')">3</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+        <button onclick="appendNumber('0')" style="grid-column: span 2;">0</button>
+        <button onclick="appendNumber('.')">.</button>
+    </div>
+</div>
+
+<script>
+    let display = document.getElementById('display');
+    let currentInput = '';
+
+    function appendNumber(number) {
+        if (display.innerText === '0') {
+            display.innerText = number;
+        } else {
+            display.innerText += number;
+        }
+        currentInput += number;
+    }
+
+    function clearDisplay() {
+        display.innerText = '0';
+        currentInput = '';
+    }
+
+    function deleteLast() {
+        display.innerText = display.innerText.slice(0, -1);
+        if (display.innerText === '') {
+            display.innerText = '0';
+        }
+        currentInput = currentInput.slice(0, -1);
+    }
+
+    function calculate() {
+        try {
+            display.innerText = eval(currentInput);
+            currentInput = display.innerText;
+        } catch (error) {
+            display.innerText = 'Error';
+            currentInput = '';
+        }
+    }
+
+    
+    document.addEventListener('keydown', function(event) {
+        const key = event.key;
+        if (!isNaN(key)) {
+            appendNumber(key); // For numbers
+        } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+            appendNumber(key); // For operators
+        } else if (key === 'Enter' || key === '=') {
+            calculate(); // For calculating the result
+        } else if (key === 'Backspace') {
+            deleteLast(); // To delete the last input
+        } else if (key === 'Escape') {
+            clearDisplay(); // To clear the display
+        } else if (key === '.') {
+            appendNumber('.'); // For decimal point
+        }
+    });
+</script>
+
+</body>
+</html>
