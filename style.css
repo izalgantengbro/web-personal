@@ -102,7 +102,7 @@ body {
 
 #projects .card {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 16, 195, 0.1);
 }
 
 #projects .card:hover {

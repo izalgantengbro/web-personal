@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Embed</title>
+    <style>
+        /* CSS untuk memastikan peta memenuhi layar */
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            // Koordinat lokasi (latitude dan longitude)
+            const location = { lat: -6.200000, lng: 106.816666 }; // Ganti dengan lokasi yang Anda inginkan
+            // Inisialisasi peta
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14, // Zoom level
+                center: location,
+            });
+            // Marker untuk lokasi
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <title>Photo Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
@@ -19,24 +19,19 @@
             font-weight: bold;
             color: #333;
         }
-        .gallery .main-image {
-            width: 100%;
-            max-width: 800px; 
-            height: auto;
-            margin: 0 auto;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s ease;
+        .album {
+            margin-bottom: 30px;
         }
-        .gallery .main-image:hover {
+        .album img {
+            width: 80%;
+            height: 300px; /* Set a fixed height for uniform size */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .album img:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        }
-        .gallery .btn-back {
-            margin-top: 30px;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border-radius: 5px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         footer {
             background-color: #343a40;
@@ -61,32 +56,113 @@
 </head>
 <body>
 
-    <section class="gallery text-center">
-        <div class="container">
-            <h2>tragedi 27 oktober 2024</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <img src="img/gallery.jpg" alt="Gallery Image Large" class="main-image">
+<section class="gallery text-center">
+    <div class="container">
+        <h2>Photo Gallery</h2>
+        <div class="row">
+            <!-- Album 1 -->
+            <div class="col-md-4 album">
+                <a href="#album1Modal" data-bs-toggle="modal">
+                    <img src="image_gallery/10.jpg" alt="Album 1" class="img-fluid">
+                    <h5 class="mt-2">Album 1</h5>
+                </a>
+            </div>
+            <!-- Album 2 -->
+            <div class="col-md-4 album">
+                <a href="#album2Modal" data-bs-toggle="modal">
+                    <img src="image_gallery/11.jpg" alt="Album 2" class="img-fluid">
+                    <h5 class="mt-2">Album 2</h5>
+                </a>
+            </div>
+            <!-- Album 3 -->
+            <div class="col-md-4 album">
+                <a href="#album3Modal" data-bs-toggle="modal">
+                    <img src="image_gallery/3.jpg" alt="Album 3" class="img-fluid">
+                    <h5 class="mt-2">Album 3</h5>
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-primary">Kembali ke Halaman Utama</a>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Album 1 -->
+<div class="modal fade" id="album1Modal" tabindex="-1" aria-labelledby="album1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="album1Label">Album 1</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/1.jpg" alt="Photo 1" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/2.jpg" alt="Photo 2" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/4.jpg" alt="Photo 3" class="img-fluid">
+                    </div>
                 </div>
             </div>
-            <a href="index.html" class="btn btn-primary btn-back mt-4">
-                <i class="fas fa-arrow-left"></i> Back to Home
-            </a>
         </div>
-    </section>
+    </div>
+</div>
 
-    <footer class="text-center">
-        <div class="container">
-            <div class="social-icons my-3">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+<!-- Modal for Album 2 -->
+<div class="modal fade" id="album2Modal" tabindex="-1" aria-labelledby="album2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="album2Label">Album 2</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <p>&copy; 2024 Afrizal Nur Perdana. All Rights Reserved.</p>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/5.jpg" alt="Photo 1" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/6.jpg" alt="Photo 2" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/7.jpg" alt="Photo 3" class="img-fluid">
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Modal for Album 3 -->
+<div class="modal fade" id="album3Modal" tabindex="-1" aria-labelledby="album3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="album3Label">Album 3</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/8.jpg" alt="Photo 1" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/9.jpg" alt="Photo 2" class="img-fluid">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <img src="image_gallery/14.jpg" alt="Photo 3" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

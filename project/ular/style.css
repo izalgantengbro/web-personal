@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', Arial, sans-serif; /* Font modern untuk body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(120deg, #06005e, #760000, #010046);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: #05005b;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+#game-container {
+  text-align: center;
+  position: relative;
+}
+
+#score-board {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family :'Courier New', Courier, monospace /* Font elegan untuk teks khusus */
+  color: #333;
+  box-sizing: border-box;
+}
+
+
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(20, 20px);
+  grid-template-rows: repeat(20, 20px);
+  gap: 1px; /* Jarak antar sel untuk membentuk grid */
+  background-color: #007512; /* Warna grid */
+}
+
+.grid-cell {
+  width: 20px;
+  height: 20px;
+  background-color: #444; /* Warna default untuk grid */
+}
+
+.snake {
+  background-color: #0f0; /* Warna tubuh ular */
+  box-shadow: none; /* Hapus bayangan atau efek yang membuat garis */
+}
+
+.food {
+  background-image: url('img/apel.png'); /* Ganti dengan path gambar makanan Anda */
+  background-size: cover; /* Pastikan gambar menutupi seluruh sel */
+  background-position: center; /* Posisikan gambar di tengah */
+  background-repeat: no-repeat; /* Jangan ulangi gambar */
+}
+
+
+.snake-head {
+  background-color: #ff0000; /* Warna merah cerah untuk kepala */
+}
+
+
+
+
+
+#start-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif /* Font modern untuk tombol */
+}
+
+#start-btn:hover {
+  background-color: #0056b3;
+}
+
+#left-image {
+  position: absolute;
+  left: 50px; /* Jarak dari sisi kiri */
+  top: 50%; /* Posisikan di tengah secara vertikal */
+  transform: translateY(-50%); /* Pusatkan gambar secara sempurna */
+  background-image: url('img/fcb.png');
+  background-size: cover;
+  background-position: center;
+  width: 300px; /* Lebar gambar */
+  height: 300px; /* Tinggi gambar */
+}
+
+#right-image {
+  position: absolute;
+  right: 50px; /* Jarak dari sisi kanan */
+  top: 50%; /* Posisikan di tengah secara vertikal */
+  transform: translateY(-50%); /* Pusatkan gambar secara sempurna */
+  background-image: url('img/fcb.png');
+  background-size: cover;
+  background-position: center;
+  width: 300px; /* Lebar gambar */
+  height: 300px; /* Tinggi gambar */
+}
